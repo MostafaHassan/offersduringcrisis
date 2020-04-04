@@ -23,6 +23,38 @@ class _RegisterAdvertState extends State<RegisterAdvert> {
     super.dispose();
   }
 
+_createTextFieldWithMultipleLines(
+      TextEditingController controller, String labelText, {Icon icon}) {
+    var w = MediaQuery.of(context).size.width;
+    var textW;
+    if (w > 600) {
+      textW = 500;
+    } else {
+      textW = w * 0.8;
+    }
+    var tf = Container(
+                alignment: Alignment.centerLeft,
+
+                height: 100,
+                width: textW,
+                child: TextField(
+                  controller: controller,
+                  expands: true,
+                  maxLength: null,
+                  maxLines: null, 
+                  style: TextStyle(color: Colors.black),
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: labelText,
+                    prefixIcon: Icon(Icons.description, color: Colors.green)),
+                  ),
+                  
+                );
+
+    return tf;
+  }
+
   _createTextField(
       TextEditingController controller, String labelText, String helperText,
       {String hintText, Icon icon, TextInputType keyboardType}) {
@@ -35,9 +67,9 @@ class _RegisterAdvertState extends State<RegisterAdvert> {
     }
     var tf = Container(
       alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(
+    //  decoration: BoxDecoration(
           //border: Border.all()
-          ),
+    //      ),
       height: 60,
       width: textW,
       child: TextField(
@@ -113,20 +145,22 @@ class _RegisterAdvertState extends State<RegisterAdvert> {
                 null,
                 "stad",
                 "",
+                hintText: "Vilka städer gäller annonsen i?",
                 icon: Icon(Icons.location_city, color: Colors.green),
               ),
 
-              _createTextField(
+              _createTextFieldWithMultipleLines(
                 null,
                 "Beskrivning av tjänst",
-                "",
                 icon: Icon(Icons.description, color: Colors.green),
               ),
+              SizedBox(height: 20),
 
               _createTextField(
                 null,
                 "Tagga ditt inlägg",
                 "",
+                hintText: "Separera med semikolon",
                 icon: Icon(Icons.tag_faces, color: Colors.green),
               ),
 
@@ -203,7 +237,10 @@ class _RegisterAdvertState extends State<RegisterAdvert> {
                     ),
                   ),
                 ),
-              )
+              ),
+
+
+              SizedBox(height: 40),
 
 
             ],
