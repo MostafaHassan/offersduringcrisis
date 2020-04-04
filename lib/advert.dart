@@ -50,6 +50,7 @@ class _AdvertWidgetState extends State<AdvertWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: fix 
     return Container(
       child:Text(globals.advertMap.toString()),
     );

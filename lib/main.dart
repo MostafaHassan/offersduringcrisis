@@ -3,6 +3,8 @@ import 'testgraphql.dart';
 //import 'package:graphql_flutter/graphql_flutter.dart';
 import "adverts_page.dart";
 import "advert.dart";
+import "registerAdvert.dart";
+import "Appbars/appbarGeneral.dart";
 
 void main() {
   runApp(MyApp());
@@ -13,11 +15,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Corona Heroes',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+
+        appBarTheme: AppBarTheme(
+          color: Color.fromARGB(40, 120, 120, 120),
+        ),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Corona Heroes'),
+
+      debugShowCheckedModeBanner: false,
+
+      initialRoute: '/',
+      routes: {
+        "registerAdvert": (context) => RegisterAdvert() ,
+      },
     );
   }
 }
@@ -44,10 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-      ),
+      appBar: getAppBar( widget.title, context, ),
       body: Center(
 
         child: Column(
@@ -61,9 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        onPressed: () {Navigator.pushNamed(context, "registerAdvert"); },
+        tooltip: 'Register Advert',
+        child: Icon(Icons.create),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
