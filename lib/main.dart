@@ -64,9 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text("test"),
-            AdvertWidget(),
-            TestGraphQL(),
+            //Text("test"),
+            AdvertsPageWidget(),
+            //TestGraphQL(),
           ],
         ),
       ),
