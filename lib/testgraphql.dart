@@ -13,10 +13,10 @@ class TestGraphQL extends StatefulWidget {
 class TestGraphQL_Widget extends State<TestGraphQL> {
   HttpLink link = HttpLink(
     uri: 'http://151.236.29.134:1337/graphql',
-    headers: <String, String>{
-      'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1OTkyMTA5LCJleHAiOjE1ODg1ODQxMDl9.yu-Ggrjgue2-JEBxJkGl0rKhI3r0GM2BjHTceUZRxeI',
-    },
+   // headers: <String, String>{
+   //   'Authorization':
+   //       'Bearer SKRIV IN API-NYCKEL HÄR',
+   // },
   );
 
   @override
