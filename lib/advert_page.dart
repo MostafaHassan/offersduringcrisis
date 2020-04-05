@@ -102,6 +102,53 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                       ),
                     ),
                   ),
+
+            // TEST
+                  Container(
+                    margin: EdgeInsets.only(left: 20, top: 20),
+                    child: Text(
+                      advert.id.toString() + 
+                      " ,\nFöretagsnamn: " + 
+                      advert.name.toString() + 
+                      " ,\nTitel: " + 
+                      advert.title.toString() + 
+                      " ,\nVisible: " + 
+                      advert.visible.toString() + 
+                      " ,\nAvatar: " + 
+                      advert.avatar.toString() + 
+                      " ,\nRegisterAt: " + 
+                      advert.registeredAt.toString() + 
+                      " ,\nKontaktNamn: " + 
+                      advert.contact.name.toString() + 
+                      " ,\nKontaktE-mail: " +
+                      advert.contact.email.toString() + 
+                      " ,\nKontaktTelnr: " +
+                      advert.contact.phone.toString() + 
+                      " ,\nKontaktAdress: " +
+                      advert.contact.address.toString() + 
+                      " ,\nKontaktWebbsida: " +
+                      advert.contact.website.toString() + 
+                      " ,\nKontaktSynlig: " +
+                      advert.contact.visible.toString() +
+
+                      " ,\nCitiesLength: " +
+                      advert.cities.length.toString() + 
+                      
+                      " ,\nCategoriesLength: " +
+                      advert.categories.length.toString(),
+
+                      
+                      
+                      style: GoogleFonts.spectral(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+
+
+
                   Container(
                     //alignment: Alignment.bottomCenter,
                     //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
