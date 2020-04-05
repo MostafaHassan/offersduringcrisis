@@ -36,23 +36,32 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
         advert.name,
         context,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          
-          StaticSideMenu(),
-          
-          Expanded(
-            child: Center(
-              child: Column(
-                //crossAxisAlignment: CrossAxisAlignment.start,
-                //mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  
-                  // Company picture
-                  Container(
-                          alignment: Alignment.topCenter,
+      body: SingleChildScrollView(
+        child: Expanded(
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+
+              // TITLE
+              Text(advert.title,
+                  style:
+                      GoogleFonts.rammettoOne(color: Colors.black, fontSize: 30)),
+
+              Padding(
+                padding: const EdgeInsets.only(right: 50, left: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    
+                    
+                // COMPANY IMAGE
+                    Flexible(
+                      flex: 5,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Container(
+                          //alignment: Alignment.topCenter,
                           width: 256.0,
                           height: 256.0,
                           margin: EdgeInsets.all(20),
@@ -65,101 +74,110 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               ),
                             ),
                           ),
-                  ),
-                  
-
-                  Container(
-                    margin: EdgeInsets.only(left: 20, top: 20),
-                    child: Text(
-                      advert.name,
-                      style: GoogleFonts.spectral(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 20, top: 5),
-                    child: Text(
-                      advert.title,
-                      style: GoogleFonts.spectral(
-                        textStyle: TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.normal,
-                        ),
+
+                    Flexible(
+                      flex: 8,
+                      child: Column(
+                        //crossAxisAlignment: CrossAxisAlignment.start,
+                        //mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          // Company picture
+
+                          Container(
+                            margin: EdgeInsets.only(left: 20, top: 20),
+                            child: Text(
+                              advert.name,
+                              style: GoogleFonts.spectral(
+                                textStyle: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20, top: 5),
+                            child: Text(
+                              advert.title,
+                              style: GoogleFonts.spectral(
+                                textStyle: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20, top: 20),
+                            child: Text(
+                              advert.description,
+                              style: GoogleFonts.spectral(
+                                textStyle: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          // TEST
+
+                          Container(
+                            margin: EdgeInsets.only(left: 20, top: 20),
+                            child: Text(
+                              advert.id.toString() +
+                                  " ,\nFöretagsnamn: " +
+                                  advert.name.toString() +
+                                  " ,\nTitel: " +
+                                  advert.title.toString() +
+                                  " ,\nVisible: " +
+                                  advert.visible.toString() +
+                                  " ,\nAvatar: " +
+                                  advert.avatar.toString() +
+                                  " ,\nRegisterAt: " +
+                                  advert.registeredAt.toString() +
+                                  " ,\nKontaktNamn: " +
+                                  advert.contact.name.toString() +
+                                  " ,\nKontaktE-mail: " +
+                                  advert.contact.email.toString() +
+                                  " ,\nKontaktTelnr: " +
+                                  advert.contact.phone.toString() +
+                                  " ,\nKontaktAdress: " +
+                                  advert.contact.address.toString() +
+                                  " ,\nKontaktWebbsida: " +
+                                  advert.contact.website.toString() +
+                                  " ,\nKontaktSynlig: " +
+                                  advert.contact.visible.toString() +
+                                  " ,\nCitiesLength: " +
+                                  advert.cities.length.toString() +
+                                  " ,\nCitiesLength: " +
+                                  advert.cities[0].name.toString() +
+                                  " ,\nCategoriesLength: " +
+                                  advert.categories.length.toString(),
+                              style: GoogleFonts.spectral(
+                                textStyle: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          Container(
+                            //alignment: Alignment.bottomCenter,
+                            //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
+                            margin: EdgeInsets.only(left: 20, top: 20),
+                            child: websiteIconWidget,
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 20, top: 20),
-                    child: Text(
-                      advert.description,
-                      style: GoogleFonts.spectral(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-
-            // TEST
-                  Container(
-                    margin: EdgeInsets.only(left: 20, top: 20),
-                    child: Text(
-                      advert.id.toString() + 
-                      " ,\nFöretagsnamn: " + 
-                      advert.name.toString() + 
-                      " ,\nTitel: " + 
-                      advert.title.toString() + 
-                      " ,\nVisible: " + 
-                      advert.visible.toString() + 
-                      " ,\nAvatar: " + 
-                      advert.avatar.toString() + 
-                      " ,\nRegisterAt: " + 
-                      advert.registeredAt.toString() + 
-                      " ,\nKontaktNamn: " + 
-                      advert.contact.name.toString() + 
-                      " ,\nKontaktE-mail: " +
-                      advert.contact.email.toString() + 
-                      " ,\nKontaktTelnr: " +
-                      advert.contact.phone.toString() + 
-                      " ,\nKontaktAdress: " +
-                      advert.contact.address.toString() + 
-                      " ,\nKontaktWebbsida: " +
-                      advert.contact.website.toString() + 
-                      " ,\nKontaktSynlig: " +
-                      advert.contact.visible.toString() +
-
-                      " ,\nCitiesLength: " +
-                      advert.cities.length.toString() + 
-                      
-                      " ,\nCategoriesLength: " +
-                      advert.categories.length.toString(),
-
-                      
-                      
-                      style: GoogleFonts.spectral(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-
-
-
-                  Container(
-                    //alignment: Alignment.bottomCenter,
-                    //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
-                    margin: EdgeInsets.only(left: 20, top: 20),
-                    child: websiteIconWidget,
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
