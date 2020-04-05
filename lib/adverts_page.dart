@@ -36,6 +36,8 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
       String registeredAt;
       
       Contact contact;
+      List<City> cities = new List<City>();
+      List<Category> categories = new List<Category>();
 
       try {
         id = advertDict["id"];
@@ -51,6 +53,18 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
         registeredAt = advertDict["RegisteredAt"];
 
         contact = new Contact(advertDict["Contact"]);
+        
+        for(var c = 0; c < advertDict["Cities"].length; c++)
+        {
+          City cit =  City(advertDict["Cities"][c]);
+          cities.add(cit);
+        }
+        for(var c = 0; c < advertDict["Categories"].length; c++)
+        {
+          Category cat =  Category(advertDict["Categories"][c]);
+          categories.add(cat);
+        }
+
 
       } catch (e) {
         print(e);
@@ -65,7 +79,9 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
         description: description,
         avatar: avatar,
         registeredAt: registeredAt,
-        contact: contact
+        contact: contact,
+        cities: cities,
+        categories: categories
       );
 
       if(visible == null)

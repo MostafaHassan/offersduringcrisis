@@ -32,6 +32,43 @@ class Contact {
   }
 }
 
+class City {
+  int id;
+  String name;
+  List<Advert> adverts;
+
+  City(dynamic cityInformation) {
+    if(cityInformation != null)
+    {
+      id = cityInformation["id"];
+      name = cityInformation["Name"];
+    }
+    else
+    {
+      //print("No city information provided");
+    }
+  }
+}
+
+class Category {
+  int id;
+  String name;
+  List<Advert> adverts;
+
+  Category(dynamic categoryInformation) {
+    if(categoryInformation != null)
+    {
+      id = categoryInformation["id"];
+      name = categoryInformation["Name"];
+    }
+    else
+    {
+      //print("No category information provided");
+    }
+  }
+}
+
+
 class Advert {
   int id;
   String name;
@@ -45,8 +82,8 @@ class Advert {
   String registeredAt;
 
   Contact contact;
-  //City[] cities;
-  //Category[] categories;
+  List<City> cities;
+  List<Category> categories;
 
   Advert({
     this.id,
@@ -59,8 +96,8 @@ class Advert {
     this.registeredAt,
     this.contact,
 
-    //this.cities,
-    //this.categories
+    this.cities,
+    this.categories
   });
 
   Widget visualize(BuildContext context) {
