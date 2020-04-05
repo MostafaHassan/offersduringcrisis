@@ -53,8 +53,8 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                   children: <Widget>[
                     Container(
                       alignment: Alignment.topCenter,
-                      width: 128.0,
-                      height: 128.0,
+                      width: 256.0,
+                      height: 256.0,
                       margin: EdgeInsets.all(20),
                       decoration: new BoxDecoration(
                         shape: BoxShape.rectangle,
