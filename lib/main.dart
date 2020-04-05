@@ -5,6 +5,7 @@ import "adverts_page.dart";
 import "registerAdvert.dart";
 import "Appbars/appbarGeneral.dart";
 import "Drawers/drawerGeneral.dart";
+import "search_bar.dart";
 
 void main() {
   runApp(MyApp());
@@ -18,18 +19,16 @@ class MyApp extends StatelessWidget {
       title: 'Corona Heroes',
       theme: ThemeData(
         primarySwatch: Colors.purple,
-
         appBarTheme: AppBarTheme(
-          color: Color.fromARGB(20, 150, 1, 120), //Color.fromARGB(40, 120, 120, 120),
+          color: Color.fromARGB(
+              20, 150, 1, 120), //Color.fromARGB(40, 120, 120, 120),
         ),
       ),
       home: MyHomePage(title: 'Corona Heroes'),
-
       debugShowCheckedModeBanner: false,
-
       initialRoute: '/',
       routes: {
-        "registerAdvert": (context) => RegisterAdvert() ,
+        "registerAdvert": (context) => RegisterAdvert(),
         "home": (context) => MyHomePage(title: 'Corona Heroes'),
       },
     );
@@ -46,25 +45,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
-  void initState()
-  {
+  void initState() {
     print("start");
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBarWidget(title: widget.title),//getAppBar( widget.title, context, ),
+      appBar: AppBarWidget(
+          title: widget.title), //getAppBar( widget.title, context, ),
       //drawer: getDrawer(context),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+
             //StaticSideMenu(),
+
+            SearchBarWidget(),
 
             AdvertsPageWidget(),
 

@@ -123,14 +123,18 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
       //for(int i = 0; i < 20; i++)
       //  advertWidgets.add(adverts[i%2].visualize(context));
 
-      for(int i = 0; i < adverts.length; i++)
-        advertWidgets.add(adverts[i].visualize(context));
+      for(int i = 0; i < 25; i++)
+        advertWidgets.add(adverts[i % adverts.length].visualize(context));
+
+      //for(int i = 0; i < adverts.length; i++)
+      //  advertWidgets.add(adverts[i].visualize(context));
     }
     print("Number of adverts: " + adverts.length.toString());
 
     return Expanded(
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(15),
+        //padding: EdgeInsets.all(15),
+        padding: EdgeInsets.only(top: 15, left: 50, right: 50, bottom: 200),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height,
