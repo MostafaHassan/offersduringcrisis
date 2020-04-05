@@ -28,10 +28,10 @@ _createTextFieldWithMultipleLines(
       TextEditingController controller, String labelText, {Icon icon}) {
     var w = MediaQuery.of(context).size.width;
     var textW;
-    if (w > 600) {
+    if (w > 700) {
       textW = 500;
     } else {
-      textW = w * 0.8;
+      textW = w * 0.6;
     }
     var tf = Container(
                 alignment: Alignment.centerLeft,
@@ -61,10 +61,10 @@ _createTextFieldWithMultipleLines(
       {String hintText, Icon icon, TextInputType keyboardType}) {
     var w = MediaQuery.of(context).size.width;
     var textW;
-    if (w > 600) {
+    if (w > 700) {
       textW = 500;
     } else {
-      textW = w * 0.8;
+      textW = w * 0.6;
     }
     var tf = Container(
       alignment: Alignment.centerLeft,

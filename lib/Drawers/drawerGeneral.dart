@@ -26,7 +26,7 @@ class _StaticSideMenuState extends State<StaticSideMenu> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.brown, Colors.white70],
+                colors: [Colors.white, Colors.grey.shade200],
               )
           ),
         child: ListView(

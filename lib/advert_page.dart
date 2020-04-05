@@ -40,75 +40,75 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          
           StaticSideMenu(),
-          Center(
-            //margin: EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.topCenter,
-                      width: 256.0,
-                      height: 256.0,
-                      margin: EdgeInsets.all(20),
-                      decoration: new BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        image: new DecorationImage(
-                          //fit: BoxFit.fill,
-                          image: new NetworkImage(
-                            globals.ipAdress + advert.avatar,
+          
+          Expanded(
+            child: Center(
+              child: Column(
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                //mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  
+                  Container(
+                          alignment: Alignment.topCenter,
+                          width: 256.0,
+                          height: 256.0,
+                          margin: EdgeInsets.all(20),
+                          decoration: new BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            image: new DecorationImage(
+                              //fit: BoxFit.fill,
+                              image: new NetworkImage(
+                                globals.ipAdress + advert.avatar,
+                              ),
+                            ),
                           ),
+                  ),
+                  
+
+                  Container(
+                    margin: EdgeInsets.only(left: 20, top: 20),
+                    child: Text(
+                      advert.name,
+                      style: GoogleFonts.spectral(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 20, top: 20),
-                  child: Text(
-                    advert.name,
-                    style: GoogleFonts.spectral(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, top: 5),
+                    child: Text(
+                      advert.title,
+                      style: GoogleFonts.spectral(
+                        textStyle: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 20, top: 5),
-                  child: Text(
-                    advert.title,
-                    style: GoogleFonts.spectral(
-                      textStyle: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.normal,
+                  Container(
+                    margin: EdgeInsets.only(left: 20, top: 20),
+                    child: Text(
+                      advert.description,
+                      style: GoogleFonts.spectral(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 20, top: 20),
-                  child: Text(
-                    advert.description,
-                    style: GoogleFonts.spectral(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
+                  Container(
+                    //alignment: Alignment.bottomCenter,
+                    //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
+                    margin: EdgeInsets.only(left: 20, top: 20),
+                    child: websiteIconWidget,
                   ),
-                ),
-                Container(
-                  //alignment: Alignment.bottomCenter,
-                  //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
-                  margin: EdgeInsets.only(left: 20, top: 20),
-                  child: websiteIconWidget,
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

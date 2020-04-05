@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
 
         appBarTheme: AppBarTheme(
-          color: Color.fromARGB(40, 120, 120, 120),
+          color: Color.fromARGB(20, 150, 1, 120), //Color.fromARGB(40, 120, 120, 120),
         ),
       ),
       home: MyHomePage(title: 'Corona Heroes'),
@@ -73,11 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      /*
       floatingActionButton: FloatingActionButton(
         onPressed: () {Navigator.pushNamed(context, "registerAdvert"); },
         tooltip: 'Register Advert',
         child: Icon(Icons.create),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      */
     );
   }
 }
