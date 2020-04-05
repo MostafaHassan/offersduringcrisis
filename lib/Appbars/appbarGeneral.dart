@@ -42,18 +42,32 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     return AppBar(
       toolbarOpacity: 1,
       iconTheme: IconThemeData(color: Colors.black),
+      //*
       title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           //   Navigator.canPop(context) == true? Flexible(flex: 2, child: backButton) : Container(),
           Flexible(
             flex: 5,
-            child: Text(
+            /*child: Text(
               title,
               style: GoogleFonts.rammettoOne(color: Colors.black),
-            ),
+              textAlign: TextAlign.center,
+            ),*/
+            child: Align(
+              alignment: Alignment.bottomRight,
+              heightFactor: 0.95, //0.8
+              widthFactor: 0.9, //0.8
+              child: Image.asset(
+                'assets/images/CH_Logo_Banner_02.png',
+                fit: BoxFit.contain,
+                height: 60,
+              ),
+            )
           ),
         ],
       ), //title,
+      //*/
       backgroundColor: Color.fromARGB(255, 161, 207, 255),//Theme.of(context).appBarTheme.color,
       elevation: 0,
       actions: <Widget>[

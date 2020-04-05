@@ -118,7 +118,7 @@ class _RegisterAdvertState extends State<RegisterAdvert> {
                         Expanded(child: Divider()),
                         Flexible(
                           child: Center(
-                            child: Text("Tack för att du vill hjälpa andra!",
+                            child: Text("Registrera din annons",
                                 style: GoogleFonts.righteous(fontSize: 20),
                                 textAlign: TextAlign.center),
                           ),
