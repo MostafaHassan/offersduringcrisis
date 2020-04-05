@@ -27,7 +27,6 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
       color: Color.fromARGB(255, 120, 120, 120),
       onPressed: () {
         globals.launchURL("alihassan.se");
-        //globals.launchURL(advert.contact.website);
       },
     );
 
@@ -39,7 +38,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
     return Scaffold(
       appBar: AppBarWidget(title: advert.name),
       body: SingleChildScrollView(
-        child: Expanded(
+       // child: Expanded(
           child: Column(
             children: [
               SizedBox(height: 20),
@@ -105,69 +104,9 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               ),
                             ),
                           ),
+                        
+                        // TEST
 
-                          // HEMSIDA
-                          // ADRESS
-                          // TELEFONNUMMER
-                          // MAILADRESS
-
-                          // STAD
-                          // KATEGORI
-
-                          // TEST
-/*
-                          Container(
-                            margin: EdgeInsets.only(left: 20, top: 20),
-                            child: Text(
-                              "test..." +
-
-                              advert.id.toString() +
-                                  " ,\nFöretagsnamn: " +
-                                  advert.name.toString() +
-                                  " ,\nTitel: " +
-                                  advert.title.toString() +
-                                  " ,\nVisible: " +
-                                  advert.visible.toString() +
-                                  " ,\nAvatar: " +
-                                  advert.avatar.toString() +
-                                  " ,\nRegisterAt: " +
-                                  advert.registeredAt.toString() +
-                                  " ,\nKontaktNamn: " +
-                                  advert.contact.name.toString() +
-                                  " ,\nKontaktE-mail: " +
-                                  advert.contact.email.toString() +
-                                  " ,\nKontaktTelnr: " +
-                                  advert.contact.phone.toString() +
-                                  " ,\nKontaktAdress: " +
-                                  advert.contact.address.toString() +
-                                  " ,\nKontaktWebbsida: " +
-                                  advert.contact.website.toString() +
-                                  " ,\nKontaktSynlig: " +
-                                  advert.contact.visible.toString() +
-                                  " ,\nCitiesLength: " +
-                                  advert.cities.length.toString() +
-                                  " ,\nCitiesLength: " +
-                                  advert.cities[0].name.toString() +
-                                  " ,\nCategoriesLength: " +
-                                  advert.categories.length.toString(),
-                              style: GoogleFonts.spectral(
-                                textStyle: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ),
-                          ),
-*/
-
-/*
-                          Container(
-                            //alignment: Alignment.bottomCenter,
-                            //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
-                            margin: EdgeInsets.only(left: 20, top: 20),
-                            child: websiteIconWidget,
-                          ),
-
-*/
                         ],
                       ),
                     ),
@@ -177,136 +116,136 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
 
               SizedBox(height: 30),
 
-              Padding(
-                padding: EdgeInsets.only(right: 75, left: 75),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Column(children: [
-                    RaisedButton(
-                      elevation: 0,
-                      color: Color.fromARGB(0, 0, 0, 0),
-                      onPressed: () {},
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.language,
-                              size: 30,
-                            ),
-                            SizedBox(width: 5),
-                            Text("Hemsida\t\t\t"+ advert.contact.website.toString()),
-                          ]),
-                    ),
-                    RaisedButton(
-                      elevation: 0,
-                      color: Color.fromARGB(0, 0, 0, 0),
-                      onPressed: () {},
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.home,
-                              size: 30,
-                            ),
-                            SizedBox(width: 5),
-                            Text("Adress\t\t\t"+ advert.contact.address.toString()),
-                          ]),
-                    ),
-                    RaisedButton(
-                      elevation: 0,
-                      color: Color.fromARGB(0, 0, 0, 0),
-                      onPressed: () {},
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.phone,
-                              size: 30,
-                            ),
-                            SizedBox(width: 5),
-                            Text("Telefonnummer\t"+ advert.contact.phone.toString()),
-                          ]),
-                    ),
-                    RaisedButton(
-                      elevation: 0,
-                      color: Color.fromARGB(0, 0, 0, 0),
-                      onPressed: () {},
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.mail,
-                              size: 30,
-                            ),
-                            SizedBox(width: 5),
-                            Text("Mejladress\t\t"+ advert.contact.email.toString()),
-                          ]),
-                    ),
-                    SizedBox(height: 30),
-                    
-                    RaisedButton(
-                      elevation: 0,
-                      color: Color.fromARGB(0, 0, 0, 0),
-                      onPressed: () {},
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.place,
-                              size: 30,
-                            ),
-                            SizedBox(width: 5),
-                            ((){
-                              var cities = "";
-                              for(int i = 0; i < advert.cities.length;i++)
-                              {
-                              if(i > 0)
-                                cities += ", ";
-                                cities += advert.cities[i].name;
-                              }
+                Padding(
+                  padding: EdgeInsets.only(right: 20, left: 75),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Column(children: [
+                      RaisedButton(
+                        elevation: 0,
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        onPressed: () {},
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.language,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(child:Text("Hemsida\t\t\t"+ advert.contact.website.toString()),),
+                            ]),
+                      ),
+                      RaisedButton(
+                        elevation: 0,
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        onPressed: () {},
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.home,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(child:Text("Adress\t\t\t"+ advert.contact.address.toString()),),
+                            ]),
+                      ),
+                      RaisedButton(
+                        elevation: 0,
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        onPressed: () {},
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.phone,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(child:Text("Telefonnummer\t"+ advert.contact.phone.toString()),),
+                            ]),
+                      ),
+                      RaisedButton(
+                        elevation: 0,
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        onPressed: () {},
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.mail,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(child:Text("Mejladress\t\t"+ advert.contact.email.toString()),),
+                            ]),
+                      ),
+                      SizedBox(height: 30),
+                      
+                      RaisedButton(
+                        elevation: 0,
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        onPressed: () {},
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.place,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              ((){
+                                var cities = "";
+                                for(int i = 0; i < advert.cities.length;i++)
+                                {
+                                if(i > 0)
+                                  cities += ", ";
+                                  cities += advert.cities[i].name;
+                                }
 
-                              return Text("Plats\t\t\t"+ cities);
-                            }())
-                            
-                          ]),
-                    ),
-                    RaisedButton(
-                      elevation: 0,
-                      color: Color.fromARGB(0, 0, 0, 0),
-                      onPressed: () {},
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.category,
-                              size: 30,
-                            ),
-                            SizedBox(width: 5),
-                            ((){
-                              var categories = "";
-                              for(int i = 0; i < advert.categories.length;i++)
-                              {
-                              if(i > 0)
-                                categories += ", ";
-                                categories += advert.categories[i].name;
-                              }
+                                return Flexible(child:Text("Plats\t\t\t"+ cities));
+                              }())
+                              
+                            ]),
+                      ),
+                      RaisedButton(
+                        elevation: 0,
+                        color: Color.fromARGB(0, 0, 0, 0),
+                        onPressed: () {},
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.category,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              ((){
+                                var categories = "";
+                                for(int i = 0; i < advert.categories.length;i++)
+                                {
+                                if(i > 0)
+                                  categories += ", ";
+                                  categories += advert.categories[i].name;
+                                }
 
-                              return Text("Kategori\t\t\t"+ categories);
-                            }())
-                          ]),
-                    ),
-                  ]),
-                ),
+                                return Flexible(child:Text("Kategori\t\t\t"+ categories));
+                              }())
+                            ]),
+                      ),
+                    ]),
+                  ),
               ),
             ],
           ),
-        ),
+       // ),
       ),
     );
   }
