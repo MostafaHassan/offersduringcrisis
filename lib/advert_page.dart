@@ -38,11 +38,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
     return Scaffold(
       appBar: AppBarWidget(title: advert.name),
       body: SingleChildScrollView(
-<<<<<<< HEAD
        // child: Expanded(
-=======
-        //child: Expanded(
->>>>>>> 1d0da57a30bc8fe43c79fc26e6dc5c3419909373
           child: Column(
             children: [
               SizedBox(height: 20),
@@ -249,11 +245,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
               ),
             ],
           ),
-<<<<<<< HEAD
        // ),
-=======
-        //),
->>>>>>> 1d0da57a30bc8fe43c79fc26e6dc5c3419909373
       ),
     );
   }
