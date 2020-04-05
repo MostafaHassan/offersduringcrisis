@@ -31,6 +31,12 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
       },
     );
 
+    var titleSize = MediaQuery.of(context).size.width*0.04;
+    if(titleSize > 30)
+    {
+      titleSize = 30;
+    }
+
     return Scaffold(
       appBar: getAppBar(
         advert.name,
@@ -43,9 +49,14 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
               SizedBox(height: 20),
 
               // TITLE
-              Text(advert.title,
-                  style:
-                      GoogleFonts.rammettoOne(color: Colors.black, fontSize: 30)),
+
+              Center(
+                child: Text(advert.title,
+                    style:
+                        GoogleFonts.rammettoOne(color: Colors.black, 
+                        fontSize: titleSize),
+                ),
+              ),
 
               Padding(
                 padding: const EdgeInsets.only(right: 50, left: 50),
@@ -56,25 +67,25 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                     
                     
                 // COMPANY IMAGE
-                    Flexible(
-                      flex: 5,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Container(
-                          //alignment: Alignment.topCenter,
-                          width: 256.0,
-                          height: 256.0,
-                          margin: EdgeInsets.all(20),
-                          decoration: new BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            image: new DecorationImage(
-                              //fit: BoxFit.fill,
-                              image: new NetworkImage(
-                                globals.ipAdress + advert.avatar,
+                    Align(
+                      alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Container(
+                            //alignment: Alignment.topCenter,
+                            width: MediaQuery.of(context).size.width*0.16, // 256.0,
+                            height: MediaQuery.of(context).size.width*0.16, //256.0,
+                            margin: EdgeInsets.all(20),
+                            decoration: new BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              image: new DecorationImage(
+                                //fit: BoxFit.fill,
+                                image: new NetworkImage(
+                                  globals.ipAdress + advert.avatar,
+                                ),
                               ),
                             ),
                           ),
-                        ),
                       ),
                     ),
 
@@ -84,31 +95,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                         //crossAxisAlignment: CrossAxisAlignment.start,
                         //mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          // Company picture
-
-                          Container(
-                            margin: EdgeInsets.only(left: 20, top: 20),
-                            child: Text(
-                              advert.name,
-                              style: GoogleFonts.spectral(
-                                textStyle: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 20, top: 5),
-                            child: Text(
-                              advert.title,
-                              style: GoogleFonts.spectral(
-                                textStyle: TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ),
-                          ),
+                        
                           Container(
                             margin: EdgeInsets.only(left: 20, top: 20),
                             child: Text(
@@ -126,6 +113,8 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                           Container(
                             margin: EdgeInsets.only(left: 20, top: 20),
                             child: Text(
+                              "test..." +
+
                               advert.id.toString() +
                                   " ,\nFöretagsnamn: " +
                                   advert.name.toString() +
