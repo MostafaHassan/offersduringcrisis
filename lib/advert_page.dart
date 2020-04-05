@@ -32,16 +32,16 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
     );
 
     return Scaffold(
-      appBar: getAppBar(
+      appBar: AppBarWidget(title: advert.name), /*getAppBar(
         advert.name,
         context,
-      ),
+      ),*/
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           
-          StaticSideMenu(),
+          //StaticSideMenu(),
           
           Expanded(
             child: Center(
