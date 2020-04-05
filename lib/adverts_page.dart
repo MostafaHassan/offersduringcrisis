@@ -24,6 +24,7 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
     for (int i = 0; i < globals.advertMap.length; i++) {
       var advertDict = globals.advertMap[i];
 
+      int id;
       String name;
       String title;
       String activeUntil;
@@ -34,10 +35,10 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
 
       String registeredAt;
       
-      ContactInformation contactInformation;
-      ContactPerson contactPerson;
+      Contact contact;
 
       try {
+        id = advertDict["id"];
         name = advertDict["Name"];
         title = advertDict["Title"];
         activeUntil = advertDict["Activeuntil"];
@@ -49,14 +50,14 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
 
         registeredAt = advertDict["RegisteredAt"];
 
-        contactInformation = new ContactInformation(advertDict["ContactInformation"]);
-        contactPerson = new ContactPerson(advertDict["ContactPerson"]);
+        contact = new Contact(advertDict["Contact"]);
 
       } catch (e) {
         print(e);
       }
 
       Advert advert = new Advert(
+        id: id,
         name: name,
         title: title,
         activeUntil: activeUntil,
@@ -64,8 +65,7 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
         description: description,
         avatar: avatar,
         registeredAt: registeredAt,
-        contactPerson: contactPerson,
-        contactInformation: contactInformation
+        contact: contact
       );
 
       if(visible == null)

@@ -50,6 +50,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   
+                  // Company picture
                   Container(
                           alignment: Alignment.topCenter,
                           width: 256.0,

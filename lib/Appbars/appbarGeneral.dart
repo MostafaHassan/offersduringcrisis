@@ -36,8 +36,8 @@ getAppBar(String title, context) {
       actions: <Widget>[
 
         IconButton(
-          icon: Icon(Icons.search),
-          tooltip: 'Sök',
+          icon: Icon(Icons.menu),
+          tooltip: 'Meny',
           onPressed: (){},
         ),
       ]);
