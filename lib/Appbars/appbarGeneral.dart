@@ -44,7 +44,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       iconTheme: IconThemeData(color: Colors.black),
       //*
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           //   Navigator.canPop(context) == true? Flexible(flex: 2, child: backButton) : Container(),
           Flexible(
