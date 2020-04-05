@@ -104,11 +104,11 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
     List<Widget> advertWidgets = new List<Widget>();
     if(adverts.length > 0)
     {
-      for(int i = 0; i < 20; i++)
-        advertWidgets.add(adverts[i%2].visualize(context));
+      //for(int i = 0; i < 20; i++)
+      //  advertWidgets.add(adverts[i%2].visualize(context));
 
-      //for(int i = 0; i < adverts.length; i++)
-      //  advertWidgets.add(adverts[i].visualize(context));
+      for(int i = 0; i < adverts.length; i++)
+        advertWidgets.add(adverts[i].visualize(context));
     }
     print("Number of adverts: " + adverts.length.toString());
 

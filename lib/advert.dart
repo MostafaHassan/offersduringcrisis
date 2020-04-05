@@ -2,8 +2,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 import "advert_page.dart";
 import "globals.dart" as globals;
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContactInformation {
@@ -110,7 +108,7 @@ class Advert {
             width: 190.0,
             height: 190.0,
             decoration: new BoxDecoration(
-              shape: BoxShape.circle,
+              shape: BoxShape.rectangle,
               image: new DecorationImage(
                 //fit: BoxFit.fill,
                 image: new NetworkImage(

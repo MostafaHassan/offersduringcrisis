@@ -4,6 +4,7 @@ import "globals.dart" as globals;
 import "advert.dart";
 import 'package:google_fonts/google_fonts.dart';
 import "Appbars/appbarGeneral.dart";
+import "Drawers/drawerGeneral.dart";
 
 class AdvertPageWidget extends StatefulWidget {
   final Advert advert;
@@ -35,87 +36,82 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
         advert.name,
         context,
       ),
-      /*
-      appBar: AppBar(
-        title: Text(advert.name),
-        leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
-      ),
-      */
-
-      body: Center(
-        child: Container(
-          //margin: EdgeInsets.all(20),
-          child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            //mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    width: 128.0,
-                    height: 128.0,
-                    margin: EdgeInsets.all(20),
-                    decoration: new BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: new DecorationImage(
-                        //fit: BoxFit.fill,
-                        image: new NetworkImage(
-                          globals.ipAdress + advert.avatar,
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          StaticSideMenu(),
+          Center(
+            //margin: EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      alignment: Alignment.topCenter,
+                      width: 128.0,
+                      height: 128.0,
+                      margin: EdgeInsets.all(20),
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          //fit: BoxFit.fill,
+                          image: new NetworkImage(
+                            globals.ipAdress + advert.avatar,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 20, top: 20),
-                child: Text(
-                  advert.name,
-                  style: GoogleFonts.spectral(
-                    textStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    advert.name,
+                    style: GoogleFonts.spectral(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 20, top: 5),
-                child: Text(
-                  advert.title,
-                  style: GoogleFonts.spectral(
-                    textStyle: TextStyle(
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.normal,
+                Container(
+                  margin: EdgeInsets.only(left: 20, top: 5),
+                  child: Text(
+                    advert.title,
+                    style: GoogleFonts.spectral(
+                      textStyle: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 20, top: 20),
-                child: Text(
-                  advert.description,
-                  style: GoogleFonts.spectral(
-                    textStyle: TextStyle(
-                      fontWeight: FontWeight.normal,
+                Container(
+                  margin: EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    advert.description,
+                    style: GoogleFonts.spectral(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Container(
-                //alignment: Alignment.bottomCenter,
-                //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
-                margin: EdgeInsets.only(left: 20, top: 20),
-                child: websiteIconWidget,
-              ),
-            ],
+                Container(
+                  //alignment: Alignment.bottomCenter,
+                  //margin: new EdgeInsets.only(bottom: 50, right: 10, left: 10, top: 10),
+                  margin: EdgeInsets.only(left: 20, top: 20),
+                  child: websiteIconWidget,
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

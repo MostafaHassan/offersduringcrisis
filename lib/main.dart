@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'testgraphql.dart';
 //import 'package:graphql_flutter/graphql_flutter.dart';
 import "adverts_page.dart";
-import "advert.dart";
 import "registerAdvert.dart";
 import "Appbars/appbarGeneral.dart";
+import "Drawers/drawerGeneral.dart";
 
 void main() {
   runApp(MyApp());
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         "registerAdvert": (context) => RegisterAdvert() ,
+        "home": (context) => MyHomePage(title: 'Corona Heroes'),
       },
     );
   }
@@ -50,7 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState()
   {
     print("start");
-    
   }
 
   @override
@@ -58,15 +58,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: getAppBar( widget.title, context, ),
+      //drawer: getDrawer(context),
       body: Center(
-
-        child: Column(
-
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            //Text("test"),
+            StaticSideMenu(),
+
             AdvertsPageWidget(),
+
             //TestGraphQL(),
+
           ],
         ),
       ),
