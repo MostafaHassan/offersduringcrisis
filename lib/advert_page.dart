@@ -45,7 +45,6 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
               SizedBox(height: 20),
 
               // TITLE
-
               Center(
                 child: Text(
                   advert.title,
@@ -159,6 +158,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                             ),
                           ),
 */
+
 /*
                           Container(
                             //alignment: Alignment.bottomCenter,
@@ -195,7 +195,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               size: 30,
                             ),
                             SizedBox(width: 5),
-                            Text("Hemsida"),
+                            Text("Hemsida\t\t\t"+ advert.contact.website.toString()),
                           ]),
                     ),
                     RaisedButton(
@@ -211,7 +211,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               size: 30,
                             ),
                             SizedBox(width: 5),
-                            Text("Adress"),
+                            Text("Adress\t\t\t"+ advert.contact.address.toString()),
                           ]),
                     ),
                     RaisedButton(
@@ -227,7 +227,7 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               size: 30,
                             ),
                             SizedBox(width: 5),
-                            Text("Telefonnummer"),
+                            Text("Telefonnummer\t"+ advert.contact.phone.toString()),
                           ]),
                     ),
                     RaisedButton(
@@ -243,10 +243,11 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               size: 30,
                             ),
                             SizedBox(width: 5),
-                            Text("Mejladress"),
+                            Text("Mejladress\t\t"+ advert.contact.email.toString()),
                           ]),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 30),
+                    
                     RaisedButton(
                       elevation: 0,
                       color: Color.fromARGB(0, 0, 0, 0),
@@ -260,7 +261,18 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               size: 30,
                             ),
                             SizedBox(width: 5),
-                            Text("Plats"),
+                            ((){
+                              var cities = "";
+                              for(int i = 0; i < advert.cities.length;i++)
+                              {
+                              if(i > 0)
+                                cities += ", ";
+                                cities += advert.cities[i].name;
+                              }
+
+                              return Text("Plats\t\t\t"+ cities);
+                            }())
+                            
                           ]),
                     ),
                     RaisedButton(
@@ -276,7 +288,17 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
                               size: 30,
                             ),
                             SizedBox(width: 5),
-                            Text("Kategori"),
+                            ((){
+                              var categories = "";
+                              for(int i = 0; i < advert.categories.length;i++)
+                              {
+                              if(i > 0)
+                                categories += ", ";
+                                categories += advert.categories[i].name;
+                              }
+
+                              return Text("Kategori\t\t\t"+ categories);
+                            }())
                           ]),
                     ),
                   ]),
