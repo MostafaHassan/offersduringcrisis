@@ -143,6 +143,7 @@ class _AdvertsPageWidgetState extends State<AdvertsPageWidget> {
           child: Container(
             alignment: Alignment.topCenter,
             child: Wrap(
+              alignment: WrapAlignment.center,
               spacing: 20,
               runSpacing: 20,
               children: advertWidgets
