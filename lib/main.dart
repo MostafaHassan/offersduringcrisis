@@ -57,14 +57,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: getAppBar( widget.title, context, ),
+      appBar: AppBarWidget(title: widget.title),//getAppBar( widget.title, context, ),
       //drawer: getDrawer(context),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            StaticSideMenu(),
+            //StaticSideMenu(),
 
             AdvertsPageWidget(),
 

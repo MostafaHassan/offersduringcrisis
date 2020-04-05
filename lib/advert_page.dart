@@ -38,10 +38,8 @@ class _AdvertPageWidgetState extends State<AdvertPageWidget> {
     }
 
     return Scaffold(
-      appBar: getAppBar(
-        advert.name,
-        context,
-      ),
+      appBar: AppBarWidget(title: advert.name), 
+
       body: SingleChildScrollView(
         child: Expanded(
           child: Column(
