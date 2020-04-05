@@ -25,41 +25,27 @@ class _StaticSideMenuState extends State<StaticSideMenu> {
         width: MediaQuery.of(context).size.width * 0.25,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.grey.shade200],
-              )
-          ),
+            gradient: LinearGradient(
+          colors: [Colors.white, Colors.grey.shade200],
+        )),
         child: ListView(
           children: <Widget>[
             SideMenuItem(
               title: Text("Hem", style: GoogleFonts.spectral()),
               navigationPushName: "home",
-              defaultColor: Colors.white24,
-              hoverColor: Colors.white38
             ),
             SideMenuItem(
               title: Text("Sök", style: GoogleFonts.spectral()),
-              navigationPushName: "",
-              defaultColor: Colors.white24,
-              hoverColor: Colors.white38
             ),
             SideMenuItem(
               title: Text("Kontakta Oss", style: GoogleFonts.spectral()),
-              navigationPushName: "",
-              defaultColor: Colors.white24,
-              hoverColor: Colors.white38,
             ),
             SideMenuItem(
               title: Text("Om Oss", style: GoogleFonts.spectral()),
-              navigationPushName: "",
-              defaultColor: Colors.white24,
-              hoverColor: Colors.white38
             ),
             SideMenuItem(
               title: Text("Registrera Ad", style: GoogleFonts.spectral()),
               navigationPushName: "registerAdvert",
-              defaultColor: Colors.white24,
-              hoverColor: Colors.white38
             ),
           ],
         ),
@@ -69,7 +55,13 @@ class _StaticSideMenuState extends State<StaticSideMenu> {
 }
 
 class SideMenuItem extends StatefulWidget {
-  SideMenuItem({Key key, this.title, this.navigationPushName, this.defaultColor, this.hoverColor}) : super(key: key);
+  SideMenuItem(
+      {Key key,
+      this.title,
+      this.navigationPushName = "",
+      this.defaultColor = Colors.white24,
+      this.hoverColor = Colors.purpleAccent})
+      : super(key: key);
 
   final Text title;
   final String navigationPushName;
@@ -77,17 +69,19 @@ class SideMenuItem extends StatefulWidget {
   final Color hoverColor;
 
   @override
-  _SideMenuItemState createState() => _SideMenuItemState(title, navigationPushName, defaultColor, hoverColor);
+  _SideMenuItemState createState() =>
+      _SideMenuItemState(title, navigationPushName, defaultColor, hoverColor);
 }
 
 class _SideMenuItemState extends State<SideMenuItem> {
   Text title;
   String navigationPushName;
-  Color defaultColor = Colors.white24;
-  Color hoverColor = Colors.white38;
-  Color currentColor = Colors.white24;
+  Color defaultColor;
+  Color hoverColor;
+  Color currentColor;
 
-  _SideMenuItemState(this.title, this.navigationPushName, this.defaultColor, this.hoverColor);
+  _SideMenuItemState(
+      this.title, this.navigationPushName, defaultColor, this.hoverColor);
 
   @override
   Widget build(BuildContext context) {
